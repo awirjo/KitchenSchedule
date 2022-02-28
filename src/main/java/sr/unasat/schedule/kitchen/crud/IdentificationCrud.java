@@ -1,0 +1,29 @@
+package sr.unasat.schedule.kitchen.crud;
+
+import sr.unasat.schedule.kitchen.dao.IdentificationDAO;
+import sr.unasat.schedule.kitchen.entities.BreakTime;
+import sr.unasat.schedule.kitchen.entities.Identification;
+
+import java.util.List;
+
+public class IdentificationCrud {
+
+    IdentificationDAO identificationDAO = new IdentificationDAO();
+
+    public void identificationDelete(){
+        System.out.println("Total identifications deleted: " + identificationDAO.deleteIdentification(70));
+    }
+    public void identificationUpdate(){
+        Identification findIdentification = identificationDAO.findByAge(32);
+        findIdentification.setAge(35);
+        findIdentification.setWeight(70);
+        identificationDAO.updateIdentification(findIdentification);
+        System.out.println("Updated Identity: " + findIdentification);
+    }
+    public void identificationRetrieve(){
+        List<Identification> identificationList = identificationDAO.retrieveIdentificationList();
+//        identificationList.stream().forEach(System.out::println);
+        System.out.println("Retrieved identification record: " + identificationList);
+    }
+
+}
