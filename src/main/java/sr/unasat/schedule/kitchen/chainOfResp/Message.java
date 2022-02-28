@@ -10,4 +10,4 @@ public class Message {
     }
 }
 
-enum MessagePriority { Normal, High }
+

@@ -60,7 +60,7 @@ public class Application {
 //        menuCrud.menuInsertHrmMenu();
 //        menuCrud.menuInsertMiningMenu();
         MessageChainMaker messageChainMaker = new MessageChainMaker();
-//        messageChainMaker.messageMaker();
+        messageChainMaker.messageMaker();
 
 
         JPAConfig.shutdown();

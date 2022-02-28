@@ -14,7 +14,7 @@ public class FirstDepartmentHandler implements ReceiverInterface  {
     public boolean processMessage(Message msg)  {
         if (msg.text.contains("ICT"))  {
             Menu menu = menuDAO.findByMealForIct("Waffle");
-            System.out.println("The following menu for ICT Department has been requested: " + menu + "\n" + msg.priority + "priority issue: "+ msg.text);
+            System.out.println("The following menu for ICT Department has been requested: " + menu + "\n" +msg.priority + "" + "priority issue: "+ msg.text);
             return true;
         }
         else { if (nextReceiver != null) { nextReceiver.processMessage(msg); } }

@@ -12,7 +12,7 @@ public class SecondDepartmentHandler implements ReceiverInterface {
     public boolean processMessage(Message msg) {
         if (msg.text.contains("Hrm"))  {
             Menu menu = menuDAO.findByMealForIct("Porridge");
-            System.out.println("The following menu for Hrm Department has been requested: " + menu + "\n" + msg.priority + "priority issue: "+ msg.text);
+            System.out.println("The following menu for Hrm Department has been requested: " + menu + "\n" + msg.priority + ""  + "priority issue: "+ msg.text);
             return true;
         }
         else { if (nextReceiver != null) { nextReceiver.processMessage(msg); } }

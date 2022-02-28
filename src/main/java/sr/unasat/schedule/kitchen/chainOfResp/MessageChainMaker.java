@@ -5,20 +5,17 @@ public class MessageChainMaker {
     public void messageMaker(){
         System.out.println("Chain Of Responsibility Design Pattern Error Handling.\n");
 
-        //Making the Chain Of Responsibility:  Fax -> email
-        ReceiverInterface faxHandler, emailHandler;
-
         //End of Chain Of Responsibility:
-        emailHandler = new FirstDepartmentHandler();
+        FirstDepartmentHandler firstDepartmentHandler = new FirstDepartmentHandler();
 
-        //Fax handler is before email
-        faxHandler = new SecondDepartmentHandler();
-        faxHandler.setNextChain(emailHandler);
+        //First handler
+        SecondDepartmentHandler secondDepartmentHandler = new SecondDepartmentHandler();
+        secondDepartmentHandler.setNextChain(firstDepartmentHandler);
 
         //Starting point: Raiser will raise issues and set the first handler:
-        IssueRaiser raiser = new IssueRaiser(faxHandler);
+        IssueRaiser raiser = new IssueRaiser(secondDepartmentHandler);
 
-        Message m1 = new Message("ICT request order to be delivered", MessagePriority.High);
+        Message m1 = new Message("ICT request order to be delivered", MessagePriority.High );
 
         raiser.raiseMessage(m1);
     }
