@@ -26,6 +26,7 @@ public class Application {
 //        departmentService.departmentUpdate();
 //        departmentService.departmentDelete();
 
+
         //Employees service
         EmployeesService employeesService = new EmployeesService();
 //        employeesService.employeesRetrieve();
@@ -57,7 +58,7 @@ public class Application {
 //        menuService.menuInsertHrmMenu();
 //        menuService.menuInsertMiningMenu();
         MessageChainMakerService messageChainMaker = new MessageChainMakerService();
-//        messageChainMaker.messageMaker();
+        messageChainMaker.messageMaker();
 
 
         JPAConfig.shutdown();
