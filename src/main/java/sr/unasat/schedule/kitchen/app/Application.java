@@ -1,66 +1,63 @@
 package sr.unasat.schedule.kitchen.app;
 
-import sr.unasat.schedule.kitchen.chainOfResp.MessageChainMaker;
-import sr.unasat.schedule.kitchen.composite.MenuApp;
 import sr.unasat.schedule.kitchen.configuration.JPAConfig;
-import sr.unasat.schedule.kitchen.crud.*;
-import sr.unasat.schedule.kitchen.decorator.SpecialMealApp;
-import sr.unasat.schedule.kitchen.entities.Department;
-import sr.unasat.schedule.kitchen.factory.OrderApp;
+import sr.unasat.schedule.kitchen.service.SpecialMealDecoratorService;
+import sr.unasat.schedule.kitchen.service.*;
+import sr.unasat.schedule.kitchen.service.OrderFactoryService;
 
 public class Application {
     public static void main(String[] args) {
 
 
         //Insert all tables
-        InsertForAllCrud insertForAllCrud = new InsertForAllCrud();
-//        insertForAllCrud.insertCrudAllTables();
+        InsertForAllService insertForAllService = new InsertForAllService();
+//        insertForAllService.insertCrudAllTables();
 
-        //BreakTime crud
-        BreakTimeCrud breakTimeCrud = new BreakTimeCrud();
-//        breakTimeCrud.breakTimeRetrieve();
-//        breakTimeCrud.breakTimeUpdate();
-//        breakTimeCrud.breakTimeDelete();
+        //BreakTime service
+        BreakTimeService breakTimeService = new BreakTimeService();
+//        breakTimeService.breakTimeRetrieve();
+//        breakTimeService.breakTimeUpdate();
+//        breakTimeService.breakTimeDelete();
 
-        //Department crud
-        DepartmentCrud departmentCrud = new DepartmentCrud();
-//        departmentCrud.departmentRetrieve();
-//        departmentCrud.departmentInsert();
-//        departmentCrud.departmentUpdate();
-//        departmentCrud.departmentDelete();
+        //Department service
+        DepartmentService departmentService = new DepartmentService();
+//        departmentService.departmentRetrieve();
+//        departmentService.departmentInsert();
+//        departmentService.departmentUpdate();
+//        departmentService.departmentDelete();
 
-        //Employees crud
-        EmployeesCrud employeesCrud = new EmployeesCrud();
-//        employeesCrud.employeesRetrieve();
-//        employeesCrud.employeesUpdate();
-//        employeesCrud.employeesDelete();
+        //Employees service
+        EmployeesService employeesService = new EmployeesService();
+//        employeesService.employeesRetrieve();
+//        employeesService.employeesUpdate();
+//        employeesService.employeesDelete();
 
-        //IdentificationCrud crud
-        IdentificationCrud identificationCrud = new IdentificationCrud();
-//        identificationCrud.identificationRetrieve();
-//        identificationCrud.identificationUpdate();
-//        identificationCrud.identificationDelete();
+        //IdentificationService service
+        IdentificationService identificationService = new IdentificationService();
+//        identificationService.identificationRetrieve();
+//        identificationService.identificationUpdate();
+//        identificationService.identificationDelete();
 
-        //Menu crud
-        MenuCrud menuCrud = new MenuCrud();
-//        menuCrud.menuRetrieve();
-//        menuCrud.menuUpdate();
-//        menuCrud.menuDelete();
+        //Menu service
+        MenuService menuService = new MenuService();
+//        menuService.menuRetrieve();
+//        menuService.menuUpdate();
+//        menuService.menuDelete();
 
 //        //Factory
-        OrderApp orderApp = new OrderApp();
-//        insertForAllCrud.insertCrudAllTables();
-//        orderApp.orderApplication();
+        OrderFactoryService orderFactoryService = new OrderFactoryService();
+//        insertForAllService.insertCrudAllTables();
+//        orderFactoryService.orderApplication();
 
 //        //Decorator
-        SpecialMealApp specialMealApp = new SpecialMealApp();
-//        specialMealApp.specialApplication();
+        SpecialMealDecoratorService specialMealDecoratorService = new SpecialMealDecoratorService();
+//        specialMealDecoratorService.specialApplication();
 
         //chain of responsibilities
-//        menuCrud.menuInsertHrmMenu();
-//        menuCrud.menuInsertMiningMenu();
-        MessageChainMaker messageChainMaker = new MessageChainMaker();
-        messageChainMaker.messageMaker();
+//        menuService.menuInsertHrmMenu();
+//        menuService.menuInsertMiningMenu();
+        MessageChainMakerService messageChainMaker = new MessageChainMakerService();
+//        messageChainMaker.messageMaker();
 
 
         JPAConfig.shutdown();

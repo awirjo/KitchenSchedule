@@ -1,4 +1,4 @@
-package sr.unasat.schedule.kitchen.crud;
+package sr.unasat.schedule.kitchen.service;
 
 
 import sr.unasat.schedule.kitchen.dao.BreakTimeDAO;
@@ -6,9 +6,7 @@ import sr.unasat.schedule.kitchen.dao.MenuDAO;
 import sr.unasat.schedule.kitchen.entities.BreakTime;
 import sr.unasat.schedule.kitchen.entities.Menu;
 
-import java.util.List;
-
-public class BreakTimeCrud {
+public class BreakTimeService {
 
     BreakTimeDAO breakTimeDAO = new BreakTimeDAO();
     MenuDAO menuDAO = new MenuDAO();

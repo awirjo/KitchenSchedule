@@ -1,12 +1,11 @@
-package sr.unasat.schedule.kitchen.crud;
+package sr.unasat.schedule.kitchen.service;
 
 import sr.unasat.schedule.kitchen.dao.IdentificationDAO;
-import sr.unasat.schedule.kitchen.entities.BreakTime;
 import sr.unasat.schedule.kitchen.entities.Identification;
 
 import java.util.List;
 
-public class IdentificationCrud {
+public class IdentificationService {
 
     IdentificationDAO identificationDAO = new IdentificationDAO();
 

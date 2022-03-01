@@ -1,11 +1,11 @@
-package sr.unasat.schedule.kitchen.crud;
+package sr.unasat.schedule.kitchen.service;
 
 import sr.unasat.schedule.kitchen.dao.DepartmentDAO;
 import sr.unasat.schedule.kitchen.entities.Department;
 
 import java.util.List;
 
-public class DepartmentCrud {
+public class DepartmentService {
 
     DepartmentDAO departmentDAO = new DepartmentDAO();
 

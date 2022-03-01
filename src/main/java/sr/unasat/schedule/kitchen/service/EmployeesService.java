@@ -1,11 +1,11 @@
-package sr.unasat.schedule.kitchen.crud;
+package sr.unasat.schedule.kitchen.service;
 
 import sr.unasat.schedule.kitchen.dao.EmployeesDAO;
 import sr.unasat.schedule.kitchen.entities.Employees;
 
 import java.util.List;
 
-public class EmployeesCrud {
+public class EmployeesService {
 
     EmployeesDAO employeesDAO = new EmployeesDAO();
 

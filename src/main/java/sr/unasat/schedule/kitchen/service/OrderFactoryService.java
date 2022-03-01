@@ -1,11 +1,14 @@
-package sr.unasat.schedule.kitchen.factory;
+package sr.unasat.schedule.kitchen.service;
 
 import sr.unasat.schedule.kitchen.dao.DepartmentDAO;
 import sr.unasat.schedule.kitchen.dao.EmployeesDAO;
 import sr.unasat.schedule.kitchen.entities.Department;
 import sr.unasat.schedule.kitchen.entities.Employees;
+import sr.unasat.schedule.kitchen.factory.Order;
+import sr.unasat.schedule.kitchen.factory.OrderFactory;
+import sr.unasat.schedule.kitchen.factory.OrderType;
 
-public class OrderApp {
+public class OrderFactoryService {
 
     public void orderApplication(){
         EmployeesDAO employeesDAO = new EmployeesDAO();

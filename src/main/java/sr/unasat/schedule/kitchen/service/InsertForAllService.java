@@ -1,14 +1,13 @@
-package sr.unasat.schedule.kitchen.crud;
+package sr.unasat.schedule.kitchen.service;
 
 import sr.unasat.schedule.kitchen.dao.*;
 import sr.unasat.schedule.kitchen.entities.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class InsertForAllCrud {
+public class InsertForAllService {
 
     BreakTimeDAO breakTimeDAO = new BreakTimeDAO();
     DepartmentDAO departmentDAO = new DepartmentDAO();
