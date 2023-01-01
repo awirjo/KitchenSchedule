@@ -11,13 +11,16 @@ public class Application {
 
         //Insert all tables
         InsertForAllService insertForAllService = new InsertForAllService();
-//        insertForAllService.insertCrudAllTables();
+        insertForAllService.insertCrudAllTables();
 
         //BreakTime service
         BreakTimeService breakTimeService = new BreakTimeService();
 //        breakTimeService.breakTimeRetrieve();
 //        breakTimeService.breakTimeUpdate();
 //        breakTimeService.breakTimeDelete();
+//        breakTimeService.breakTimeRapportByQuarter();
+//        breakTimeService.breakTimeRapportHalfYear();
+//        breakTimeService.breakTimeRapportByYear();
 
         //Department service
         DepartmentService departmentService = new DepartmentService();
@@ -58,7 +61,7 @@ public class Application {
 //        menuService.menuInsertHrmMenu();
 //        menuService.menuInsertMiningMenu();
         MessageChainMakerService messageChainMaker = new MessageChainMakerService();
-        messageChainMaker.messageMaker();
+//        messageChainMaker.messageMaker();
 
 
         JPAConfig.shutdown();

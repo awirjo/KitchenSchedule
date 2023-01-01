@@ -17,7 +17,7 @@ public class MessageChainMakerService {
         //Starting point: Raiser will raise issues and set the first handler:
         IssueRaiser raiser = new IssueRaiser(secondDepartmentHandler);
 
-        Message messagePrint = new Message("ICT request order to be delivered", MessagePriority.High );
+        Message messagePrint = new Message("Hrm request order to be delivered", MessagePriority.High );
 
         raiser.raiseMessage(messagePrint);
     }

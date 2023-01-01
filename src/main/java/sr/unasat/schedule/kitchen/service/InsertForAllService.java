@@ -34,7 +34,7 @@ public class InsertForAllService {
         Menu menu = Menu.builder().breakfast("Cornflakes").lunch("Nasi").dinner("Lobster").special_meals("Steak with oyster sauce").description("Menu of the day").build();
         menuDAO.insertMenu(menu);
 
-        BreakTime breakTime = BreakTime.builder().serving_time("From 8am till 7pm").serving_date(LocalDate.now()).department(departmentSet).menu(menu).build();
+        BreakTime breakTime = BreakTime.builder().serving_time("8am").serving_date(LocalDate.now()).department(departmentSet).menu(menu).build();
         BreakTime saveBreakTime = breakTimeDAO.insertBreakTime(breakTime);
         System.out.println("The following records are inserted in the tables BreakTime, Menu, Department, Employees and Identification: " +" \n "
                 + saveBreakTime + employees);

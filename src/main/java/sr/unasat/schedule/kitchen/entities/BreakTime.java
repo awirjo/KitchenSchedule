@@ -9,7 +9,7 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+//@ToString
 @Setter
 @Getter
 @Entity
@@ -18,7 +18,7 @@ public class BreakTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column (unique = true)
+    @Column (unique = false)
     private String serving_time;
     @Column
     private LocalDate serving_date;
@@ -72,4 +72,13 @@ public class BreakTime {
         this.serving_date = serving_date;
     }
 
+    @Override
+    public String toString() {
+        return "BreakTime{" +
+                "serving_time='" + serving_time + '\'' +
+                ", serving_date=" + serving_date +
+                ", menu=" + menu +
+                ", department=" + department +
+                '}';
+    }
 }

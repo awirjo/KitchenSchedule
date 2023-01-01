@@ -7,6 +7,7 @@ import sr.unasat.schedule.kitchen.entities.Department;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.List;
 
 public class BreakTimeDAO {
@@ -16,6 +17,39 @@ public class BreakTimeDAO {
 //    public BreakTimeDAO(EntityManager entityManager) {
 //        this.entityManager = entityManager;
 //    }
+    public List<BreakTime> findServingDateByHalfYear(LocalDate serving_date) {
+        entityManager.getTransaction().begin();
+        String jpql = "select b from BreakTime b join Menu m on b.menu.id = m.id where QUARTER(b.serving_date) in (1,2) and m.description =:description";
+        TypedQuery<BreakTime> query = entityManager.createQuery(jpql, BreakTime.class);
+        List<BreakTime> breakTimeList = query.setParameter("description", "Menu of the day").getResultList();
+        entityManager.getTransaction().commit();
+        return breakTimeList;
+    }
+    public List<BreakTime> findServingDateByYear(LocalDate serving_date) {
+        entityManager.getTransaction().begin();
+        String jpql = "select b from BreakTime b where b.serving_date = :serving_date and YEAR(b.serving_date) =:year";
+        TypedQuery<BreakTime> query = entityManager.createQuery(jpql, BreakTime.class);
+        List<BreakTime> breakTimeList = query.setParameter("serving_date", serving_date).setParameter("year", serving_date.getYear()).getResultList();
+        entityManager.getTransaction().commit();
+        return breakTimeList;
+    }
+    public List<BreakTime> findServingDateByQuarter(LocalDate serving_date) {
+        entityManager.getTransaction().begin();
+        String jpql = "select b from BreakTime b join Menu m on b.menu.id = m.id where QUARTER(b.serving_date) in (1) and m.description =:description";
+        TypedQuery<BreakTime> query = entityManager.createQuery(jpql, BreakTime.class);
+        List<BreakTime> breakTimeList = query.setParameter("description", "Menu of the day").getResultList();
+        entityManager.getTransaction().commit();
+        return breakTimeList;
+    }
+//    public List<BreakTime> findServingDateByQuarter(LocalDate serving_date) {
+//        entityManager.getTransaction().begin();
+//        String jpql = "select b from BreakTime b where b.serving_date = :serving_date and QUARTER(b.serving_date) =:quarter";
+//        TypedQuery<BreakTime> query = entityManager.createQuery(jpql, BreakTime.class);
+//        List<BreakTime> breakTimeList = query.setParameter("serving_date", "Menu of the day").setParameter("quarter", 1).getResultList();
+//        entityManager.getTransaction().commit();
+//        return breakTimeList;
+//    }
+
     public List<BreakTime> retrieveBreakTimeList() {
         entityManager.getTransaction().begin();
         String jpql = "select b from BreakTime b";

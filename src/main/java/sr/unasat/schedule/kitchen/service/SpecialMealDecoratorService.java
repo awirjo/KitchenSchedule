@@ -11,7 +11,7 @@ public class SpecialMealDecoratorService {
     public void specialApplication(){
         MenuDAO menuDAO = new MenuDAO();
         menuDAO.findByMealOfDay("Steak with oyster sauce");
-        menuDAO.findByDinnerGroup("Lobster");
+        menuDAO.findByDinnerGroup("Bami");
 
         SpecialMeal birthday = new BirthdayMeal();
 
@@ -23,7 +23,7 @@ public class SpecialMealDecoratorService {
         birthday.getMeal(menuDAO.findByMealOfDay("Steak with oyster sauce"));
 
         System.out.println("\n Dinner for a closed group of employees");
-        dinnerForClosedGroup.getMeal(menuDAO.findByDinnerGroup("Lobster"));
+        dinnerForClosedGroup.getMeal(menuDAO.findByDinnerGroup("Bami"));
 
         System.out.println("\n ");
         birthdayParty.getMeal(menuDAO.findByMealOfDay("Steak with oyster sauce"));

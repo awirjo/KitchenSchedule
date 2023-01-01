@@ -88,13 +88,8 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "\n Menu{" +
-                "id=" + id +
-                ", breakfast='" + breakfast + '\'' +
-                ", lunch='" + lunch + '\'' +
-                ", dinner='" + dinner + '\'' +
-                ", special_meals='" + special_meals + '\'' +
-                ", description='" + description + '\'' +
+        return "Menu{" +
+                "special_meals='" + special_meals + '\'' +
                 '}';
     }
 }
